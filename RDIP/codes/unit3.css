@@ -1,0 +1,21 @@
+html {
+    height: 100%;
+}
+body{
+
+    padding-top: 0%;
+    overflow: hidden;
+}
+
+
+ select{
+     margin:5% 40%;
+     padding: 0.8%;
+
+ }
+ #steve{
+    text-align: center;
+ }
+ #sub{
+    text-align: center;
+ }
