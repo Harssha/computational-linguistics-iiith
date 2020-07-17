@@ -9,12 +9,25 @@ function pickup() {
 
             document.getElementById("sub").style.color="green";
   }
+  else{
+  document.getElementById("steve").innerHTML="";
+  document.getElementById("sub").innerHTML="";
+  document.getElementById("sen").innerHTML="";
+  alert("Please Select a Language From The DropDown");
+}
+}
+function ran()
+{
+  var x=document.getElementById('select').value;
   if(s=="English")
+        
         {
-            var eng1 = ['John ate an apple before afternoon',
+
+                    var e1 = ['John ate an apple before afternoon',           
                             'before afternoon John ate an apple',
                             'John before afternoon ate an apple'
                             ];
+        }
             var e2 = ['some students like to study in the night',
                             'at night some students like to study'
                            ];
@@ -47,10 +60,22 @@ function pickup() {
                              'I‌ ‌bought‌ ‌a‌ ‌book‌ ‌that‌ ‌I‌ ‌told‌ ‌her‌ ‌yesterday‌',
                              'I‌ ‌bought‌ ‌a‌ ‌book‌ ‌yesterday‌ ‌that‌ ‌I‌ ‌told‌ ‌her‌',
                              'yesterday‌ ‌I‌ ‌bought‌ ‌a‌ ‌book‌ ‌that‌ ‌I‌ ‌told‌ ‌her‌'];
+           var all_eng=[e1,e2,e3,e4,e5,e6,e7,e8,e9,e10];
+        var arr  =all_eng[Math.floor(Math.random() * all_eng.length)];
+      var arra =arr[Math.floor(Math.random() * arr.length)];
+      var bb=arra.split(" ");
+      var j=0;
+      var length2=0;
+      length2 = bb.length;
+      document.getElementById("sen").innerHTML=" "
+      for(j=0;j<length2;j++)
+      {
 
-        }
+          document.getElementById("sen").innerHTML += "<button id='buttons'>"+bb[j]+"</button>";
+      }
+  }
 
-        else if(s=="Hindi")
+         if(s=="Hindi")
         {
             var h1 = ['राम‌ ‌और‌ ‌श्याम‌ ‌बाजार‌ ‌गयें‌',
                         'राम‌ ‌और‌ ‌श्याम‌ ‌गयें‌ ‌बाजार‌',
@@ -98,13 +123,18 @@ function pickup() {
                         'वहाँ‌ ‌है‌ ‌बड़ी‌ ‌सी‌ ‌एक‌ ‌किताब‌',
                         '‌है‌ ‌वहाँ‌ ‌एक‌ ‌बड़ी‌ ‌सी‌ ‌किताब‌',
                         'है‌ ‌वहाँ‌ ‌बड़ी‌ ‌सी‌ ‌एक‌ ‌किताब‌'];
+            var all_hin=[h1,h2,h3,h4,h5,h6,h7];
+          var arr  =all_hin[Math.floor(Math.random() * all_hin.length)];
+          var arra =arr[Math.floor(Math.random() * arr.length)];
+          var bb=arra.split(" ");
+          var j=0;
+          var length2=0;
+          length2 = bb.length;
+          document.getElementById("sen").innerHTML=" "
+          for(j=0;j<length2;j++)
+          {
+             document.getElementById("sen").innerHTML += "<button id='buttons'>"+bb[j]+"</button>";
 
         }
-
-
-else{
-  document.getElementById("steve").innerHTML="";
-  document.getElementById("sub").innerHTML="";
-  alert("Please Select a Language From The DropDown");
 }
 }
