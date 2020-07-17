@@ -1,4 +1,5 @@
 // DropDown function
+var reforms;
 function pickup() {
   var s=document.getElementById('select').value;
   if(s=="English"||s=="Hindi")
@@ -64,16 +65,20 @@ function ran()
         var arr  =all_eng[Math.floor(Math.random() * all_eng.length)];
       var arra =arr[Math.floor(Math.random() * arr.length)];
       var bb=arra.split(" ");
-      var j=0;
+      var i=0;
       var length2=0;
       length2 = bb.length;
       document.getElementById("sen").innerHTML=" "
-      for(j=0;j<length2;j++)
+      for(i=0;i<bb.length;i++)
       {
 
-          document.getElementById("sen").innerHTML += "<button id='buttons'>"+bb[j]+"</button>";
-      }
-  }
+          document.getElementById("sen").innerHTML += "<button class='buttons' id='buttons" +i+"' value='"+bb[i]+"' onclick='Display(this.id,this.value);'>"+bb[i]+"</button>";
+          document.getElementById("msg").innerHTML="";
+          document.getElementById("selected").innerHTML ="";
+          document.getElementById("reform").innerHTML = "";
+    }
+    reforms=document.getElementById("sen").innerHTML ;
+}
 
          if(s=="Hindi")
         {
@@ -129,12 +134,36 @@ function ran()
           var bb=arra.split(" ");
           var j=0;
           var length2=0;
-          length2 = bb.length;
+          length2 = b2.length;
           document.getElementById("sen").innerHTML=" "
-          for(j=0;j<length2;j++)
+          for(i=0;i<b2.length;i++)
           {
-             document.getElementById("sen").innerHTML += "<button id='buttons'>"+bb[j]+"</button>";
+             document.getElementById("sen").innerHTML += "<button class='buttons' id='buttons" +i+"' value='"+b2[i]+"' onclick='Display(this.id,this.value);'>"+b2[i]+"</button>";
+             
+             document.getElementById("msg").innerHTML="";
+             document.getElementById("selected").innerHTML ="";
+             document.getElementById("reform").innerHTML = "";
+        }
+        reforms=document.getElementById("sen").innerHTML ;
+}
+}
+function Display(bid,bvalue)
+        {
+
+            document.getElementById("msg").innerHTML="Formed Sentence <span>(after selecting words):</span>";
+            document.getElementById("selected").innerHTML +=" "+bvalue;
+            document.getElementById(bid).style.display="none";
+            document.getElementById("reform").innerHTML = "<button class='reform' id='reform' onclick='reform()'> Re-form the sentence</button>";
+
 
         }
-}
-}
+        function reform()
+        {
+
+            document.getElementById("sen").innerHTML = reforms;
+            document.getElementById("msg").innerHTML="";
+            document.getElementById("selected").innerHTML ="";
+            document.getElementById("reform").innerHTML = "";
+
+
+        }
