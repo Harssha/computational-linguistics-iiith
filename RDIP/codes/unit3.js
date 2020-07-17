@@ -1,3 +1,4 @@
+// DropDown function
 function pickup() {
   var s=document.getElementById('select').value;
   if(s=="English"||s=="Hindi")
