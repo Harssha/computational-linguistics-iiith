@@ -193,23 +193,21 @@ function Display(bid,bvalue)
 
 
         }
-        function reform()
-        {
-
-            document.getElementById("sen").innerHTML = reforms;
-            document.getElementById("msg").innerHTML="";
-            document.getElementById("selected").innerHTML ="";
-            document.getElementById("reform").innerHTML = "";
-            count=0;
-             document.getElementById("checkcorrectness").innerHTML="";
-             document.getElementById("correct").innerHTML="";
-            document.getElementById("wrong").innerHTML="";
-            document.getElementById("showAnswer").innerHTML=""
-
-
-
-
-        }
+        
+         function toggle()
+          {
+              if(document.getElementById("hide").innerHTML=='Hide the Correct Sentences')
+              {
+                  document.getElementById("showAnswer").innerHTML="";
+                  document.getElementById("showAnswer").innerHTML="<button id='hide' onclick='toggle()'>Get Answers</button>";
+                 
+              }
+              else
+              {
+                  document.getElementById("showAnswer").innerHTML+=anslist;
+                  document.getElementById("hide").innerHTML="Hide the Correct Sentences";
+              }
+          }
         function check()
         {
             var ans= selectedSentence.trim();
@@ -245,6 +243,23 @@ function Display(bid,bvalue)
 
             }
           }
+          function reform()
+        {
+
+            document.getElementById("sen").innerHTML = reforms;
+            document.getElementById("msg").innerHTML="";
+            document.getElementById("selected").innerHTML ="";
+            document.getElementById("reform").innerHTML = "";
+            count=0;
+             document.getElementById("checkcorrectness").innerHTML="";
+             document.getElementById("correct").innerHTML="";
+            document.getElementById("wrong").innerHTML="";
+            document.getElementById("showAnswer").innerHTML=""
+
+
+
+
+        }
           function chk()
           {
             var i=0;
@@ -267,17 +282,4 @@ function Display(bid,bvalue)
               }
             }
           }
-          function toggle()
-          {
-              if(document.getElementById("hide").innerHTML=='Hide the Correct Sentences')
-              {
-                  document.getElementById("showAnswer").innerHTML="";
-                  document.getElementById("showAnswer").innerHTML="<button id='hide' onclick='toggle()'>Get Answers</button>";
-                 
-              }
-              else
-              {
-                  document.getElementById("showAnswer").innerHTML+=anslist;
-                  document.getElementById("hide").innerHTML="Hide the Correct Sentences";
-              }
-          }
+         
